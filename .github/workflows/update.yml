@@ -1,0 +1,20 @@
+name: update
+on: 
+  push:
+    branches: [main]
+#  workflow_dispatch: # uncomment this line and comment above to disable deploy on push
+jobs:
+  deploy:
+    name: Update
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update Deployment
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }} 
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: |
+              cd P5-cmsc389T-web-template
+              git pull
