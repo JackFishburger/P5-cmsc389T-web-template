@@ -35,7 +35,7 @@ volumes:
     driver_opts:
       type: none
       #fill out your absolute path to your folder here
-      device: /Users/jacky/cmsc389T-spring22/Project5/cmsc389T-web-template
+      device: /Users/jacky/Library/CloudStorage/OneDrive-UniversityofMaryland/CMSC389T/P5-cmsc389T-web-template
       o: bind
 
 networks:
