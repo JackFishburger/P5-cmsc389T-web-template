@@ -3,7 +3,7 @@
 #install all packages in package.json
 #expose port 8080 and run the app
 #the docker lecture will help you complete this file 
-#there should be a total of 9 lines
+#there should be a total of 9 lines adding some changes
 FROM node:10-alpine
 
 USER node
