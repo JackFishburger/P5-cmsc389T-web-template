@@ -6,16 +6,18 @@
 #there should be a total of 9 lines
 FROM node:10-alpine
 
-RUN node 
-#"preconfigured node user?"
+USER node
 
-WORKDIR /app 
-#"and it's node modules???"
+RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
 
-COPY package.json ./ 
+WORKDIR /home/node/app
+
+COPY package*.json ./ 
 
 RUN npm install
 
-ENV PORT=8080
+COPY --chown=node:node . .
+
+EXPOSE 8080
 
 CMD ["node", "app.js"]
