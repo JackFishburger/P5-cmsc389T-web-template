@@ -7,7 +7,7 @@ services:
       context: .
       dockerfile: Dockerfile
     image: nodejs 
-    container_name: personal_website 
+    container_name: nodejs 
     restart: unless-stopped
     
     networks:
@@ -20,7 +20,7 @@ services:
     container_name: webserver
     restart: unless-stopped
     ports:
-      - "80"
+      - "80:80"
     volumes:
       - web-root:/var/www/html
       - ./nginx-conf:/etc/nginx/conf.d
